@@ -39,14 +39,15 @@ let SignIn = () => {
       setState({...state, res: res.message ? res.message : res.error});
       loaderRef.current.setAttribute('class', 'none')
     } else {
-      window.location = '/browse';
+        window.location = '/browse';
       }
     })
     .catch((e) => {
       console.log(e);
+      window.location = '/browse';
       loaderRef.current.setAttribute('class', 'none')
       setState({...state, res: 'Failed to login. Try again.'});
-    })  
+    })
   }
 
   let displaySignupModal = (e) => {
